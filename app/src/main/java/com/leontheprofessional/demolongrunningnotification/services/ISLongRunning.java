@@ -3,6 +3,7 @@ package com.leontheprofessional.demolongrunningnotification.services;
 import android.app.IntentService;
 import android.content.Intent;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 /**
  * Created by leon on 2/28/18.
@@ -10,6 +11,11 @@ import android.support.annotation.Nullable;
 
 public class ISLongRunning extends IntentService {
 
+    private static final String TAG = ISLongRunning.class.getSimpleName();
+
+    public ISLongRunning(){
+        super("Long Running Notification");
+    }
 
     /**
      * Creates an IntentService.  Invoked by your subclass's constructor.
@@ -22,6 +28,6 @@ public class ISLongRunning extends IntentService {
 
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
-
+        Log.v(TAG, "onHandleIntent() got called");
     }
 }
